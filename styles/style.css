@@ -1,0 +1,158 @@
+/* Overall Background */
+body {
+    background: radial-gradient(circle at top left, #0d0d0d, #1a1a1a, #000);
+    font-family: 'Orbitron', sans-serif;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+/* Neon Text and Buttons */
+h1 {
+    font-size: 3em;
+    color: #00ffff;
+    text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff;
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #ff00ff;
+    text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff;
+}
+
+input[type="text"] {
+    background-color: transparent;
+    border: 2px solid #ff00ff;
+    color: #fff;
+    padding: 10px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s ease;
+    width: 70%;
+    margin-bottom: 10px;
+}
+
+input[type="text"]::placeholder {
+    color: #bbb;
+}
+
+input[type="text"]:focus {
+    border-color: #00ffff;
+}
+
+button {
+    background-color: #ff00ff;
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff;
+    transition: background-color 0.3s ease;
+    margin-left: 10px;
+}
+
+button:hover {
+    background-color: #00ffff;
+    text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+}
+
+/* Task List */
+.task-container {
+    display: flex;
+    justify-content: space-around;
+    width: 90%;    /* Slightly reduced width */
+    margin: 0 auto;
+    padding-top: 20px;
+}
+
+.task-column {
+    width: 45%;    /* Each column takes up 45% of the width */
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.2), 0 0 40px rgba(0, 255, 255, 0.2);
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background: #333;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    color: #fff;
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff;
+}
+
+li:hover {
+    background-color: #00ffff;
+    box-shadow: 0 0 15px #00ffff, 0 0 30px #00ffff;
+}
+
+li button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: #ff5722;
+    padding: 0;
+    margin-left: 10px;
+    width: 24px;
+    height: 24px;
+    text-align: center;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+li button:hover {
+    color: #ff7043;
+    transform: scale(1.2); /* Slight enlarge effect */
+}
+
+/* Add glowing animation to task columns */
+.task-column h2 {
+    animation: glow 1.5s ease-in-out infinite alternate;
+    margin-bottom: 20px;
+}
+
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff;
+    }
+    100% {
+        text-shadow: 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff;
+    }
+}
+
+/* Background animation for neon vibes */
+body::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(from 180deg, #ff00ff, #00ffff, #ff00ff, #00ffff);
+    animation: rotate 6s linear infinite;
+    z-index: -1;
+    opacity: 0.05; /* Faint background gradient */
+}
+
+@keyframes rotate {
+    100% {
+        transform: rotate(360deg);
+    }
+}
